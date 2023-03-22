@@ -1,6 +1,8 @@
 
 # FloorPlan
 
+![](Assets/Banner.jpg)
+
 A lightweight framework for programmatic UI built for iOS using UIKit and Swift.
 
 Its a package I wrote for my personal projects. Sharing it with the community. Although this framework is not directly inspired by SnapKit, it shares a few similarities in its usage.
