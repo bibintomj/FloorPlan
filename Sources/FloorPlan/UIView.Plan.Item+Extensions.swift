@@ -24,6 +24,22 @@ public extension UIView.Plan.Item {
         return self
     }
 
+    @discardableResult func lessThanOrEqualTo(_ item: UIView.Plan.Item) -> UIView.Plan.Item {
+        relatedToView = item.plan?.view
+        secondAttribute = item.firstAttribute
+        constraint = createConstraint(relation: .lessThanOrEqual)
+        build()
+        return self
+    }
+
+    @discardableResult func greaterThanOrEqualTo(_ item: UIView.Plan.Item) -> UIView.Plan.Item {
+        relatedToView = item.plan?.view
+        secondAttribute = item.firstAttribute
+        constraint = createConstraint(relation: .greaterThanOrEqual)
+        build()
+        return self
+    }
+
     @discardableResult func equalTo(_ constant: CGFloat) -> UIView.Plan.Item {
         secondAttribute = .notAnAttribute
         constraint = constraint ?? createConstraint(constant: constant)
@@ -31,7 +47,6 @@ public extension UIView.Plan.Item {
         build()
         return self
     }
-
 
     @discardableResult func offset(byConstant constant: CGFloat) -> UIView.Plan.Item {
         assert(constraint != nil, "Constraint Not found. Offset cannot be set")
@@ -78,6 +93,6 @@ public extension UIView.Plan.Item {
         assert(constraint != nil, "Constraint is not created. Cannot build.")
         plan?.view.translatesAutoresizingMaskIntoConstraints = false
         constraint?.isActive = true
-        plan?.allItems.append(self)
+        plan?.all.append(self)
     }
 }

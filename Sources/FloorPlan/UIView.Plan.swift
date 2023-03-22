@@ -10,7 +10,7 @@ import UIKit
 public extension UIView {
     class Plan {
         public let view: UIView
-        public var allItems: [UIView.Plan.Item] = []
+        public var all: [UIView.Plan.Item] = []
 
         internal init(_ view: UIView) { self.view = view }
     }
@@ -37,5 +37,6 @@ public extension UIView.Plan {
     var horizontalEdges: [UIView.Plan.Item] { [leading, trailing] }
     var verticalEdges: [UIView.Plan.Item] { [top, bottom] }
     var size: [UIView.Plan.Item] { [width, height] }
+    var center: [UIView.Plan.Item] { [centerX, centerY] }
 }
 
