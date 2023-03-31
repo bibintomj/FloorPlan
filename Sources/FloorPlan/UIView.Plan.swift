@@ -10,7 +10,7 @@ import UIKit
 public extension UIView {
     class Plan {
         public let view: UIView
-        public var all: [UIView.Plan.Item] = []
+        public var current: [UIView.Plan.Item] = []
         public internal(set) var safeAreaLayoutGuides: UILayoutGuide?
 
         internal init(_ view: UIView) { self.view = view }

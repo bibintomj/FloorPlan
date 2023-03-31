@@ -140,6 +140,6 @@ public extension UIView.Plan.Item {
         assert(constraint != nil, "Constraint is not created. Cannot build.")
         plan?.view.translatesAutoresizingMaskIntoConstraints = false
         constraint?.isActive = true
-        plan?.all.append(self)
+        plan?.current.append(self)
     }
 }

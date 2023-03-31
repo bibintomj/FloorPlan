@@ -78,10 +78,10 @@ view2.bottom.equalToSuperView().offset(byConstant: 20).priority(.defaultLow)
 
 
 ## Psst. Its Animatable...🤩 
-You don't need to store your constraint references anymore to animate it later. You can access all existing constraints using `view.plan.all`
+You don't need to store your constraint references anymore to animate it later. You can access all existing constraints using `view.plan.current`
 ```swift
 UIView.animate(withDuration: 0.3) {
-    self.view2.plan.all.height?.equalTo(100)   // modify constant directly inside animation block.
+    self.view2.plan.current.height?.equalTo(100)   // modify constant directly inside animation block.
     self.view.layoutIfNeeded()
 }
 ```
