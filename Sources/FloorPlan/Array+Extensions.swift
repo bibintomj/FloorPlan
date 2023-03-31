@@ -13,6 +13,11 @@ public extension Array where Element == UIView.Plan.Item {
         return self
     }
 
+    @discardableResult func equalToSafeArea() -> [UIView.Plan.Item] {
+        forEach { $0.equalToSafeArea() }
+        return self
+    }
+
     @discardableResult func equalTo(_ items: [UIView.Plan.Item]) -> [UIView.Plan.Item] {
         assert(count == items.count, "Count mismatch. Plan cannot be built")
         for (index, item) in self.enumerated() { item.equalTo(items[index]) }
@@ -30,6 +35,11 @@ public extension Array where Element == UIView.Plan.Item {
 
     @discardableResult func offset(byConstant constant: CGFloat) -> [UIView.Plan.Item] {
         forEach { $0.offset(byConstant: constant) }
+        return self
+    }
+
+    @discardableResult func offset(byMultiplier multiplier: CGFloat) -> [UIView.Plan.Item] {
+        forEach { $0.offset(byMultiplier: multiplier) }
         return self
     }
 }

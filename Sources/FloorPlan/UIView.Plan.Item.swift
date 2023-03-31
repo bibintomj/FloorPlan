@@ -13,7 +13,8 @@ public extension UIView.Plan {
         public internal(set) var firstAttribute: NSLayoutConstraint.Attribute?
         public internal(set) var secondAttribute: NSLayoutConstraint.Attribute?
         public internal(set) var relatedToView: UIView?
-        
+        public internal(set) var safeAreaLayoutGuides: UILayoutGuide?
+
         public var constraint: NSLayoutConstraint? {
             didSet { constraint?.isActive = true }
         }

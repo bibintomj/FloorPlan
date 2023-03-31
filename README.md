@@ -56,24 +56,32 @@ view.addSubview(view1) {
 }
 ```
 
+### Works with SafeArea
+```swift
+view.addSubview(view1) {
+    $0.horizontalEdges.equalToSafeArea()
+    $0.top.equalTo(view.plan.safeArea.bottom)
+    $0.bottom.equalToSuperView()
+}
+```
+
 ### Create constraints related to other views
 ```swift
 view2.plan.top.equalTo(view1.plan.bottom).offset(byConstant: 20)
 view2.plan.horizontalEdges.equalTo([view1.plan.leading, view1.plan.trailing])
 ```
 
-### Set priority
+### Set priority 
 ```swift
 view2.bottom.equalToSuperView().offset(byConstant: 20).priority(.defaultLow)
 ```
 
 
-
-## Psst. Its Animatable 😃 
-No need to store your constraint references anymore. We got you.
+## Psst. Its Animatable...🤩 
+You don't need to store your constraint references anymore to animate it later. You can access all existing constraints using `view.plan.all`
 ```swift
 UIView.animate(withDuration: 0.3) {
-    self.view2.plan.all.height?.equalTo(100)   // modify attribute directly inside animation block.
+    self.view2.plan.all.height?.equalTo(100)   // modify constant directly inside animation block.
     self.view.layoutIfNeeded()
 }
 ```
