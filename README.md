@@ -1,7 +1,7 @@
 
 # FloorPlan 📦
 
-![](Assets/Banner.jpg)
+![alt text](https://i.imgur.com/vEagWEC.png)
 
 A lightweight framework 📦 for programmatic UI built for iOS using UIKit and Swift.
 
